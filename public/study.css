@@ -1,0 +1,310 @@
+
+body {
+  font-size: 28px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3c3c3c;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(95, 94, 94);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #3c3c3c;;
+}
+
+.active {
+  background-color: rgb(243, 221, 94);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 10px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  /* ㄴ🟡 컬러 상속받아라 */
+}
+.board_wrap {
+  width: 1000px;
+  margin: 100px auto;
+}
+
+.board_title {
+  margin-bottom: 30px;
+}
+
+.board_title strong {
+  font-size: 3rem;
+}
+
+.board_title p {
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
+
+.bt_wrap {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0;
+  text-align: center;
+}
+
+.bt_wrap a {
+  display: inline-block;
+  min-width: 80px;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 1.4rem;
+}
+.bt_wrap a:first-child {
+  margin-left: 0;
+}
+
+.bt_wrap a.on {
+  background: #000;
+  color: #fff;
+}
+.board_list {
+  width: 100%;
+  border-top: 2px solid #000;
+}
+.board_list > div {
+  border-bottom: 1px solid #ddd;
+  font-size: 0;
+}
+.board_list > div.top {
+  border-bottom: 1px solid #999;
+}
+.board_list > div:last-child {
+  border-bottom: 1px solid #000;
+}
+.board_list > div > div {
+  display: inline-block;
+  /* ㄴ 🟡가로배치!!! */
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.board_list > div.top > div {
+  font-weight: 600;
+}
+
+.board_list .num {
+  width: 10%;
+}
+.board_list .title {
+  width: 60%;
+  text-align: left;
+}
+.board_list .top .title {
+  text-align: center;
+}
+.board_list .writer {
+  width: 10%;
+}
+.board_list .date {
+  width: 10%;
+}
+.board list .count {
+  width: 10%;
+}
+.board_page {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0;
+}
+
+.board_page a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-left: 0;
+  line-height: 100%;
+}
+
+.board_page a.bt {
+  padding-top: 10px;
+  font-size: 1.2rem;
+  letter-spacing: -1px;
+}
+
+.board_page a.num {
+  padding-top: 9px;
+  font-size: 1.4rem;
+}
+
+.board_page a.num.on {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
+.board_page a:first-child {
+  border-left: 1px solid #ddd;
+}
+
+.board_view {
+  width: 100%;
+  border-top: 2px solid #000;
+  font-size: 1.4rem;
+}
+.board_view .title {
+  padding: 20px 15px;
+  border-bottom: 1px dashed #ddd;
+  font-size: 2rem;
+}
+.board_view .info {
+  padding: 15px;
+  border-bottom: 1px solid #999;
+  font-size : 0;
+  /* ㄴ🟡 (바로 아래 주석과 이어짐)띄어쓰기 0으로 만들기 위해서  */
+
+}
+.board_view .info dl {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+  /* ㄴ🟡 만약 안쪽 여백을 20px 만 주었는데 안쪽 여백이 조금 더 생겨 있다고 생각되면 
+  부모태그로 올라가서 font-size : 0을 주어야 된다. */
+}
+.board_view .info dl:first-child {
+  padding-left: 0;
+}
+
+.board_view .info dl::before {
+  content: "";
+  /* ㄴ🟡 역할 : 페이지 번호 같은 것 보통 css 에서 라인이나 글머리표 같은 
+  동그란 모양 으로  보통 만들기 때문에 빈칸으로 만들어 둡니다. 
+  이 속성이 없으면 아얘 생겨나지가 않기 때문에 빈칸으로 남겨두더라도 꼭 있어야 해요. */
+  display: block;
+  width: 1px;
+  height: 13px;
+  background: #ddd;
+  /* ㄴ🟡display 가 inline 으로 되어있으면 자신만의 영역을 가지고 있지를 않기 때문에 
+  block 으로 바꿔주어야 빨간색(#ddd로 변경)의 배경색이 보인다. */
+  display: block;
+  position: absolute;
+  top: 1px; /*🟡부모인 .board_view .info dl의 
+  position:relative를 기준으로  top 과 left 가 잡히게 된다.*/
+  left: 0;
+  /* 🟡개별적인 위치값을 가지라고 position을 absolute로 해주고
+  (absolut값은 부모의 위치에 따라서 적용이 된다. 
+  그래서 relative로 되어있는 요소를 기준으로 잡는다. 
+  이 경우 좌측 상반 ) ,  이 dl::before의 부모는 dl
+  그리고 top과 left 로 위치조정.  */
+}
+
+.board_view .info dl:first-child::before {
+  display: none;
+  /*🟡첫번째에 있는 가상 선택자는 보이지마!*/
+}
+
+.board_view .info dl dt,
+.board_view .info dl dd {
+  display: inline-block;
+  font-size: 1.4rem;
+}
+
+.board_view .info dl dt {
+}
+
+.board_view .info dl dd {
+  margin-left: 10px;
+  /* ㄴ🟡 왼쪽에서 10px 떨어지기 */
+  color: #777;
+}
+.board_view .cont {
+  padding: 15px;
+  /* ㄴ🟡 글 콘텐츠 내부의 안쪽 여백값 */
+  border-bottom: 1px solid #000;
+  line-height: 160%;
+  font-size: 1.4rem;
+}
+
+.wrap{
+  text-align:center;
+  font-size:25px;
+}
+.cont{
+  font-size:20px;
+}
+.bigcont{
+  font-size:35px;
+}
+.testbox{
+  margin:auto;
+}
+.grid>div{
+  background:white;
+  padding:1px;
+  display:block;
+  width:100%; height:100%;
+  overflow:hidden;
+  position:relative;
+}
+.grid>div::before{
+  content:"";
+  display:block;
+}
+.grid>div figure{
+  width:100%; height:100%;
+}
+.grid>div figurecaption{
+  width:100%; height:100%;
+  background-color:rgba(0,0,0,0.7);
+
+  position:absolute;
+  top:0; left:0;
+
+  color:#fff; text-align: center;
+  line-height:200px;
+
+  opacity:0;
+  transition:0.3s;
+}
+.grid{
+  display:grid;
+  grid-template-columns:2fr 2fr 2fr;
+  border: 3px solid black;
+  overflow:hidden;
+}
+.hovtext{
+  display:none;
+}
+.grid>div:hover figcaption, .grid>div:focus figcaption{
+  opacity:1;
+}
